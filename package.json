@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "jsdoc": "node ./jsdocconf.js && yarn run jsdocT && yarn run jsdocA && yarn run jsdocU",
+    "jsdocT": "jsdoc src -r -c ./jsdoc/config/a/conf.json -d ./jsdoc/doc/A",
+    "jsdocA": "jsdoc src -r -c ./jsdoc/config/b/conf.json -d ./jsdoc/doc/B",
+    "jsdocU": "jsdoc jsdoc/src/usage -r -c ./jsdoc/config/u/conf.json -d ./jsdoc/doc/u"
   },
   "dependencies": {
     "less": "^4.2.1",
